@@ -24,17 +24,17 @@ int findmax(int *array, size_t size)
 * @array: Array to count values of
 * @size: Size of array
 * @val: Value to count in the array
-* Return: Count of va
+* Return: Count
 */
 
 int count(int *array, size_t size, int val)
 {
 	int c = 0, i;
 
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < (int)size; ++i)
 	{
 		if (array[i] == val)
-			c++;
+			++c;
 	}
 	return (c);
 }
@@ -56,20 +56,19 @@ void counting_sort(int *array, size_t size)
 	ca = malloc(sizeof(int) * (max + 1));
 	if (ca == NULL || out == NULL)
 		return;
-	for (i = j = 0; i < max + 1; i++)
+	for (i = j = 0; i < max + 1; ++i)
 	{
 		j += count(array, size, i);
 		ca[i] = j;
 	}
 	print_array(ca, max + 1);
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < (int)size; ++i)
 	{
 		out[ca[array[i]] - 1] = array[i];
 		ca[array[i]] -= 1;
 	}
-	for (i = 0; i < (int)size; i++)
+	for (i = 0; i < (int)size; ++i)
 		array[i] = out[i];
 
-	free(out);
-	free(ca);
+	free(out), free(ca);
 }
