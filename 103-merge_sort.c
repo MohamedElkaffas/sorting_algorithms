@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
-* merge - Divide and conquer algo,merges the splits from merge_sort
+* merge - Divide and conquer algo,merges
 * @array: Array split to merge
 * @low: lowest index of split
 * @middle: middle index of split
