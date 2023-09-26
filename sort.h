@@ -37,7 +37,7 @@ void cocktail_sort_list(listint_t **list);
 void swap_nodes(listint_t **list, listint_t *node);
 listint_t *get_dlistint_lelem(listint_t *h);
 int getCantRep(int num);
-
+int hoare_partition(int *array, int lowe, int higher, size_t size);
 void shell_sort(int *array, size_t size);
 
 void counting_sort(int *array, size_t size);
